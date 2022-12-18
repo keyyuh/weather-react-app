@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -59,18 +60,9 @@ export default function Weather() {
               <span className="current-temp temp">
                 {Math.round(weather.temp)}
               </span>
-              <span className="units">
-                {" "}
-                <a href="#" className="metric-temp">
-                  °C{" "}
-                </a>
-              </span>{" "}
+              <span className="units">°C</span>
               <span className="break">|</span>
-              <span className="units">
-                <a href="#" className="imperial-temp">
-                  °F
-                </a>
-              </span>
+              <span className="units">°F</span>
               <div className="weather-icon">☁️</div>
             </div>
           </div>
