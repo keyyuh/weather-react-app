@@ -68,7 +68,7 @@ export default function Weather() {
           </div>
           <span>
             <a
-              href="https://github.com/keyyuh/weather-react"
+              href="https://github.com/keyyuh/weather-react-app"
               className="code-source"
               target="_blank"
               rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export default function Weather() {
         <h1 className="text-center">Please enter a city...</h1>
         <span>
           <a
-            href="https://github.com/keyyuh/weather-react"
+            href="https://github.com/keyyuh/weather-react-app"
             className="code-source"
             target="_blank"
             rel="noopener noreferrer"
