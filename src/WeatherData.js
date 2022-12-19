@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcons from "./WeatherIcons";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function WeatherInfo(props) {
@@ -22,7 +23,9 @@ export default function WeatherInfo(props) {
             <span className="units">°C</span>
             <span className="break">|</span>
             <span className="units">°F</span>
-            <div className="weather-icon">☁️</div>
+            <div className="weather-icon">
+              <WeatherIcons code={props.data.icon} />
+            </div>
           </div>
         </div>
       </div>
