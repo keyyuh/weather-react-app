@@ -6,16 +6,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.city);
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({ ready: false });
 
   function displayWeather(response) {
     setWeather({
+      ready: true,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
   }
@@ -46,23 +47,27 @@ export default function Weather(props) {
       <input type="button" className="current-location" value="📍" />
     </form>
   );
-  return (
-    <div className="container">
-      <div className="Weather">
-        <div className="form">{form}</div>
-        <WeatherData data={weather} />
-        <span>
-          <a
-            href="https://github.com/keyyuh/weather-react-app"
-            className="code-source"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open-sourced
-          </a>{" "}
-          code by Kea Doolittle
-        </span>
+  if (weather.ready) {
+    return (
+      <div className="container">
+        <div className="Weather">
+          <div className="form">{form}</div>
+          <WeatherData data={weather} />
+          <span>
+            <a
+              href="https://github.com/keyyuh/weather-react-app"
+              className="code-source"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open-sourced
+            </a>{" "}
+            code by Kea Doolittle
+          </span>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return searchCity();
+  }
 }
