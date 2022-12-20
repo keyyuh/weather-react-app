@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcons from "./WeatherIcons";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TempConversion from "./TempConversion";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,12 +18,7 @@ export default function WeatherInfo(props) {
             <div className="wind">Wind: {Math.round(props.data.wind)}mph</div>
           </div>
           <div className="col">
-            <span className="current-temp temp">
-              {Math.round(props.data.temp)}
-            </span>
-            <span className="units">°C</span>
-            <span className="break">|</span>
-            <span className="units">°F</span>
+            <TempConversion celsius={props.data.temp} />
             <div className="weather-icon">
               <WeatherIcons code={props.data.icon} />
             </div>
