@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import WeatherData from "./WeatherData";
+import Forecast from "./Forecast";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeather({
       ready: true,
+      coords: response.data.coord,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
@@ -53,6 +55,7 @@ export default function Weather(props) {
         <div className="Weather">
           <div className="form">{form}</div>
           <WeatherData data={weather} />
+          <Forecast coords={weather.coords} />
           <span>
             <a
               href="https://github.com/keyyuh/weather-react-app"
