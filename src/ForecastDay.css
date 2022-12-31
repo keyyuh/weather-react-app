@@ -1,0 +1,13 @@
+.maxTemp,
+.minTemp {
+  margin: 3px;
+}
+.maxTemp {
+  color: rgba(32, 32, 32, 0.89);
+}
+.minTemp {
+  font-weight: bold;
+}
+.weather-icon canvas {
+  margin: 5px;
+}
