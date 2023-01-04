@@ -11,8 +11,8 @@ export default function FormatDate(props) {
     "SATURDAY",
   ];
   const day = days[props.date.getDay()];
-  const hours = props.date.getHours();
-  const minutes = props.date.getMinutes();
+  const hours = props.date.getHours().toString().padStart(2, 0);
+  const minutes = props.date.getMinutes().toString().padStart(2, 0);
   return (
     <div>
       LAST UPDATED: {day} {hours}:{minutes}
