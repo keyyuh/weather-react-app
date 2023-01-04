@@ -1,20 +1,17 @@
 .Weather {
+  display: block;
   background-color: rgba(228, 219, 219, 0.699);
   box-shadow: 2px 2px 3px rgb(49, 54, 63);
   border-radius: 10px;
   padding: 20px;
   text-align: left;
   max-width: 720px;
-  min-width: 400px;
   margin: 0 auto;
 }
 body {
   background-image: url("./img/background.jpg");
-  background-size: 1800px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  padding-left: 400px;
-  padding-right: 300px;
+  background-size: 1980px;
+  padding-top: 150px;
 }
 .city-input {
   width: 570px;
@@ -47,13 +44,11 @@ body {
 }
 .current-temp {
   font-size: 30px;
-  position: relative;
-  bottom: 30px;
 }
 .unit {
   font-size: 15px;
   position: relative;
-  bottom: 43px;
+  bottom: 10px;
 }
 
 .break {
@@ -74,4 +69,22 @@ body {
 .code-source {
   color: white;
   text-decoration: none;
+}
+@media (max-width: 990px) {
+  body {
+    background-size: 1980px;
+    padding-top: 80px;
+  }
+  .city-input {
+    width: 70%;
+  }
+  .city-name {
+    text-align: center;
+  }
+  .searchbtn {
+    width: 25%;
+  }
+  .weather-display {
+    text-align: center;
+  }
 }

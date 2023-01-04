@@ -11,3 +11,9 @@
 .weather-icon canvas {
   margin: 5px;
 }
+.forecastDay {
+  margin: 5px;
+}
+.col-sm-2 {
+  margin: 10px;
+}

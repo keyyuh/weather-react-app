@@ -19,12 +19,14 @@ export default function WeatherData(props) {
           <div className="humidity">Humidity: {props.data.humidity}%</div>
           <div className="wind">Wind: {Math.round(props.data.wind)}mph</div>
         </div>
-        <div className="col">
-          <span className="current-temp">{Math.round(props.data.temp)}</span>
-          <span className="unit">°F</span>
-          <span className="weather-icon">
-            <WeatherIcons code={props.data.icon} size={50} />
+        <div className="col weather-display">
+          <span className="current-temp">
+            {Math.round(props.data.temp)}
+            <span className="unit">°F</span>
           </span>
+          <div className="weather-icon">
+            <WeatherIcons code={props.data.icon} size={50} />
+          </div>
         </div>
       </div>
     </div>

@@ -50,23 +50,21 @@ export default function Weather(props) {
   );
   if (weather.ready) {
     return (
-      <div className="container">
-        <div className="Weather">
-          <div className="form">{form}</div>
-          <WeatherData data={weather} />
-          <Forecast coords={weather.coords} />
-          <span>
-            <a
-              href="https://github.com/keyyuh/weather-react-app"
-              className="code-source"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open-sourced
-            </a>{" "}
-            code by Kea Doolittle
-          </span>
-        </div>
+      <div className="Weather">
+        <div className="form">{form}</div>
+        <WeatherData data={weather} />
+        <Forecast coords={weather.coords} />
+        <span>
+          <a
+            href="https://github.com/keyyuh/weather-react-app"
+            className="code-source"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open-sourced
+          </a>{" "}
+          code by Kea Doolittle
+        </span>
       </div>
     );
   } else {
